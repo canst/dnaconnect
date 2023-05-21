@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>DNA Connect: Unlocking the Genome Code</title>
+  <style>
+    /* CSS styles for the game elements */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .title-bar {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    .description {
+      text-align: center;
+      padding: 10px;
+    }
+    .score-section{
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .center-line {
+      height: 2px;
+      background-color: #333;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px;
+    }
+    .column {
+      flex: 1;
+      margin: 10px;
+    }
+    .column h2 {
+      text-align: center;
+    }
+    .dna-letter {
+      width: 50px;
+      height: 50px;
+      margin: 10px auto;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffcc00;
+      cursor: move;
+      
+    }
+    .rna-letter {
+      width: 50px;
+      height: 50px;
+      margin: 10px auto;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #33cc33;
+    }
+    .button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #555;
+    }
+    .polypeptide-circle {
+      width: 200px;
+      height: 200px;
+      background-color: #ff6699;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px auto;
+      font-size: 24px;
+      color: #fff;
+      transition: background-color 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="title-bar">
+    <h1>DNA Connect: Unlocking the Code</h1>
+  </div>
+  <div class="description">
+    <p>In this game, you'll embark on a journey deep inside the 
+      microscopic world of cells, where you'll encounter the DNA letters—A, T, G,
+       and C—and their RNA counterparts—A, U, C, and G. Your mission is to connect
+        these letters correctly, unlocking the code that leads to the formation of vital polypeptides.
+    </p>
+  </div>
+  <div class="center-line"></div>
+  <div class="score-section">
+    <h2>Score: <span id="score">0</span></h2>
+    <h2>Level: <span id="level">1</span></h2>
+  </div>
+  <div class="container">
+    <div class="column">
+      <h2>DNA</h2>
+      <div id="dna-column" class="column-content">
+        <div id="dna-sequence">
+          <div class="dna-letter" draggable="true" data-dna="A" style="background-color: #ffcc00;">A</div>
+          <div class="dna-letter" draggable="true" data-dna="T" style="background-color: #ff9933;">T</div>
+          <div class="dna-letter" draggable="true" data-dna="G" style="background-color: #ff6600;">G</div>
+          <div class="dna-letter" draggable="true" data-dna="C" style="background-color: #ff3366;">C</div>
+        </div>
+      </div>
+      <button id="shuffle-button" class="button">Shuffle DNA</button>
+    </div>
+    <div class="column">
+      <h2>RNA</h2>
+      <div id="rna-column" class="column-content">
+        <div id="rna-sequence">
+          <div class="rna-letter"  data-rna=""></div>
+          <div class="rna-letter" data-rna=""></div>
+          <div class="rna-letter" data-rna=""></div>
+          <div class="rna-letter" data-rna=""></div>
+        </div>
+      </div>
+      <button id="check-button" class="button">Check Match</button>
+    </div>
+  </div>
+  <div class="polypeptide-circle" id="polypeptide-circle">ser</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
